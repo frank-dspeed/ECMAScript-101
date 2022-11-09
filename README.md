@@ -54,3 +54,6 @@ $('#my-selector')[0].innerHTML = 'My content.'
 ```
 
 As you see the core of jquery is fast implemented via already existing core api's of the dom it is not a 1:1 match as this for example always returns array but you get the concept.
+
+## Where it starts
+We will call all JS like languages from now on Stealify Lang. Which is a Superset of JSON so you now learned with that sentence that JS like languages are JSON Objects with some additions we call them propertys in Stealify like languages a property is defined as "key": "value" pair where the key is always string and the value can be any supported type. Some types are more importent then others while it is always a good thing to know them all which are not much. The most compatible smallest dominator is the u8IntArray as JSON is a UTF-8 based language it gets represented as u8 intger value the so called charCode and as a char can consist out of more then one charCode there exists a unit called codePoint which is a result out of one or more charcodes combined into a utf8 character.
