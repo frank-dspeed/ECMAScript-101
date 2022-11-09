@@ -22,7 +22,7 @@ here is one example that i use my self often to assign styles and create a objec
 
 ```js
 
-const createEl = /** @type {(string) => typeof HTMLElement} */ ((tagName='div', /** @type {typeof HTMLElement } */ _el) => 
+const createEl = /** @type {(string) => { withStyle: (typeof CSSStyleDeclaration) => typeof HTMLElement}} */ ((tagName='div', /** @type {typeof HTMLElement } */ _el) => 
   (_el = document.createElement(tagName)) && ({
   withStyle: (cssStyleDeclaration) => Object.assign(
     _el.style, cssStyleDeclaration) && _el
