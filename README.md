@@ -27,7 +27,7 @@ const createEl = (tagName='div',_el) =>
     _el.style, cssStyleDeclaration) && _el
 });
 
-// Note: i only created the above object that returns a style() function to create the api below i use private
+// Note: i only created the above object that returns a withStyle() function to create the api below i use private
 // createEl("tag",propertys) as a helper which is not implemented in this example.
 console.log(
   createEl("p")
