@@ -22,7 +22,13 @@ here is one example that i use my self often to assign styles and create a objec
 
 ```js
 
-const createEl = /** @type {(string) => { withStyle: (typeof CSSStyleDeclaration) => typeof HTMLElement}} */ ((tagName='div', /** @type {typeof HTMLElement } */ _el) => 
+/** 
+ * Additional TypeDef only for demonstration to shim type inference that would say that _el is a optional arrgument
+ * which it is not it is a none use able arrgument as we directly assign to it no matter what value it would be.
+ * @typedef {(string) => { withStyle: (typeof CSSStyleDeclaration) => typeof HTMLElement }} createElHelper 
+ */
+
+const createEl = /** @type {typeof createElHelper} */ ((tagName='div', /** @type {typeof HTMLElement } */ _el) => 
   (_el = document.createElement(tagName)) && ({
   withStyle: (cssStyleDeclaration) => Object.assign(
     _el.style, cssStyleDeclaration) && _el
