@@ -16,7 +16,29 @@ If you would have worked directly with only the fundamentals you would now save 
 But there are solutions once you know and understand them it is one of the Most nice concepts ever done when applyed right. Applying it right means to understand the right place for abstractions and how to do them without causing other developers into reading additional books for the next framework.
 
 Theere are many ways to do usefull abstractions in place the most usefull abstractions that you will always find in good code are for example currying. 
-Functional Currying is a pattern where you combine functions into functions to create hire order functions that a composed out of functions.
+Functional Currying is a pattern where you combine functions into functions to create higher order functions that a composed out of functions.
+
+here is one example that i use my self often to assign styles and create a object with a single function
+
+```js
+const createEl = (tagName='div',_el) => 
+  (_el = document.createElement(tagName)) && ({
+  withStyle: (cssStyleDeclaration) => Object.assign(
+    _el.style, cssStyleDeclaration) && _el
+});
+
+// Note: i only created the above object that returns a style() function to create the api below i use private
+// createEl("tag",propertys) as a helper which is not implemented in this example.
+console.log(
+  createEl("p")
+    .withStyle({ color: "red" })
+    .style.color
+) // => "red"
+
+// so we can can now call createEl(tagName).withStyle(new CSSStyleDeclartion()) to create elements withStyle
+```
+
+but please do not do the above all over and create the next framework this is only to reduce code in large projects. you should mostly prefer to use the raw api's that the Host offers to you this is a example from a browser Host as you probally already saw because we use CSS and HTML.
 
 That is the most powerfull concept of ECMAScript driven languages that they are able to return functions which return it self a function without bloating the stack pointer in the virtual stack machine we call that correct call stack pointer. In many other implementations a call to a function that calls a function which returns a function adds a stack like fn => fn => fn => fn => result in Our case it will return each function directly on the main stack thats called the heap while a heap is a implementation of binary tree objects at the fundamental level. Many framework only coders will think when they hear the term heap that this is the memory area the code runs in while that is a guess able conclusion in reality it says not only that it also tells us how that memory is implemented it is a btree type struct. 
 
