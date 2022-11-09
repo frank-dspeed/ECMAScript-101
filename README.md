@@ -21,11 +21,12 @@ Functional Currying is a pattern where you combine functions into functions to c
 here is one example that i use my self often to assign styles and create a object with a single function
 
 ```js
-const createEl = (tagName='div',_el) => 
+
+const createEl = /** @type {(string) => typeof HTMLElement} */ ((tagName='div', /** @type {typeof HTMLElement } */ _el) => 
   (_el = document.createElement(tagName)) && ({
   withStyle: (cssStyleDeclaration) => Object.assign(
     _el.style, cssStyleDeclaration) && _el
-});
+}));
 
 // Note: i only created the above object that returns a withStyle() function to create the api below i use private
 // createEl("tag",propertys) as a helper which is not implemented in this example.
