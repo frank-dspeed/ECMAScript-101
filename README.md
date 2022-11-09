@@ -57,3 +57,8 @@ As you see the core of jquery is fast implemented via already existing core api'
 
 ## Where it starts
 We will call all JS like languages from now on Stealify Lang. Which is a Superset of JSON so you now learned with that sentence that JS like languages are JSON Objects with some additions we call them propertys in Stealify like languages a property is defined as "key": "value" pair where the key is always string and the value can be any supported type. Some types are more importent then others while it is always a good thing to know them all which are not much. The most compatible smallest dominator is the u8IntArray as JSON is a UTF-8 based language it gets represented as u8 intger value the so called charCode and as a char can consist out of more then one charCode there exists a unit called codePoint which is a result out of one or more charcodes combined into a utf8 character.
+
+## Where does it come from?
+The internet was in need for a IDL Interface Definition Language that is so DYNAMIC that it can create DSL's so called Domain Specific Languages. You can see the same concept for example with the Java Language which is exactly 1:1 the Same Concept but other implemented i would say that Stealifys Implementation is evolutionary now much more powerfull then Java Virtual Machine based concepts. If your interrested into that and you maybe got some Java knowleg some how look into GraalVM a JVM based implementation and framework to create Language runtimes.
+
+So we needed a language to define Languages and JSON was ideal for that at the given constraints to get it done in a small time frame. But it turned out to be pritty stable as you see the whole world depends now on it and binary. 
