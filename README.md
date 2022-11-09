@@ -19,3 +19,16 @@ Theere are many ways to do usefull abstractions in place the most usefull abstra
 Functional Currying is a pattern where you combine functions into functions to create hire order functions that a composed out of functions.
 
 That is the most powerfull concept of ECMAScript driven languages that they are able to return functions which return it self a function without bloating the stack pointer in the virtual stack machine we call that correct call stack pointer. In many other implementations a call to a function that calls a function which returns a function adds a stack like fn => fn => fn => fn => result in Our case it will return each function directly on the main stack thats called the heap while a heap is a implementation of binary tree objects at the fundamental level. Many framework only coders will think when they hear the term heap that this is the memory area the code runs in while that is a guess able conclusion in reality it says not only that it also tells us how that memory is implemented it is a btree type struct. 
+
+## How will i teach you?
+We will simply create the most stared frameworks our self but even better with raw code and you will understand via comparison why we did it better and how we did so. How can i know that we are better? I did mesure it else i would not come to a valid conclusion this is not based on my feeling while it also feels good for me. I invested years of Observations and getting my hands dirty to come to this final massurements that i now want to share with you the reader. 
+
+You need to understand what i did to see the failure. I did my self invest years into framework creation as also create frameworks to algin and unifie the apis of frameworks. I Forked over 5000 JS Projects and incremental improved adopted them. And i abandoned them all. I sayed jQuery is dead thousend times but today i would call that the most stable and fundamental framework that exists in web history. It did many things right. I would not use it if i can avoid it but if it is used and done right then it is the lessest evil that exists. And it was hard for me to say that. Because i know stuff like this
+
+jquery-select-core.js
+```ts
+const $ = document.querySelectorAll
+$('#my-selector')[0].innerHTML = 'My content.'
+```
+
+As you see the core of jquery is fast implemented via already existing core api's of the dom it is not a 1:1 match as this for example always returns array but you get the concept.
